@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Fix Global"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="page__nft-detail nft-detail">
+                <div class="nft-detail__container backlight" data-watch>
+                    <div class="nft-detail__heading">
+                        <h1 class="nft-detail__title _anim-child-top">
+                            FixGold NFT #1
+                        </h1>
+                        <div class="nft-detail__back _anim-child-fade">
+                            <a href="category.html">
+                                &#60;&#60; Back
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nft-detail__main">
+                        <div class="nft-detail__img-box" data-watch>
+                            <div class="nft-detail__img">
+                                <img src="@img/content/nft-diamond.png" alt="">
+                            </div>
+                        </div>
+                        <div class="nft-detail__body" data-watch>
+                            <!-- 2 этих дочерних элемента нужно попеременно скрывать
+                            через атрибут hidden, чтобы показать либо полную,
+                            либо ограниченную информацию пользователю -->
+                            <div class="full-nft-info">
+                                <div class="full-nft-info__name" data-watch>
+                                    FixGold NFT #1
+                                </div>
+                                <div class="full-nft-info__bid" data-watch>
+                                    Current bid: <span>$19,999.00</span>
+                                </div>
+                                <div class="full-nft-info__event" data-watch>
+                                    <div class="full-nft-info__event-name">
+                                        Seed Investment Round
+                                    </div>
+                                    <div class="full-nft-info__event-date">
+                                        From <time datetime="2022-08-07">07.08.2022</time> to <time
+                                            datetime="2022-10-30">30.10.2022</time>
+                                    </div>
+                                </div>
+                                <div class="full-nft-info__number" data-watch>
+                                    Number: <span>1</span>
+                                </div>
+                                <div class="full-nft-info__in-stock" data-watch>
+                                    1 IN STOCK
+                                </div>
+                                <p class="full-nft-info__text" data-watch>
+                                    Condition: 1. You must be connected to your account - 2. You must own a fixed priced
+                                    NFT - 3. You must have minimum 200 dollars in your accout in order to participate in
+                                    the auction (participation fee)
+                                </p>
+                                <div class="full-nft-info__left" data-watch>
+                                    <div class="full-nft-info__left-title">
+                                        Time left:
+                                    </div>
+                                    <div class="full-nft-info__timer timer">
+                                        <div class="timer__value timer__value--days">
+                                            <span>64</span> Days
+                                        </div>
+                                        <div class="timer__value timer__value--hours">
+                                            <span>00</span> Hours
+                                        </div>
+                                        <div class="timer__value timer__value--minutes">
+                                            <span>03</span> Minutes
+                                        </div>
+                                        <div class="timer__value timer__value--seconds">
+                                            <span>46</span> Seconds
+                                        </div>
+                                    </div>
+                                    <time class="full-nft-info__end-time" datetime="2022-12-31 02:00:00">
+                                        Auction ends: 31/12/2022 02:00:00
+                                    </time>
+                                </div>
+                                <div class="full-nft-info__note" data-watch>
+                                    <p class="full-nft-info__note-title">
+                                        This is a bidding fee auction.
+                                    </p>
+                                    <p class="full-nft-info__note-desc">
+                                        All participants must pay a non-refundable fee
+                                        of <span>$200,00</span> to place bids
+                                    </p>
+                                </div>
+                                <form class="full-nft-info__form" action="" data-watch>
+                                    <label class="full-nft-info__form-label">
+                                        <span>$</span>
+                                        <input class="full-nft-info__form-input input" type="number" value="0.00"
+                                            step="0.01">
+                                    </label>
+                                    <button class="full-nft-info__form-btn btn" type="submit">
+                                        <span>Bid</span>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="limit-nft-info" hidden>
+                                <div class="limit-nft-info__name" data-watch>
+                                    FixGold NFT #1
+                                </div>
+                                <div class="limit-nft-info__event" data-watch>
+                                    <div class="limit-nft-info__event-name">
+                                        Seed Investment Round
+                                    </div>
+                                    <div class="limit-nft-info__event-date">
+                                        From <time datetime="2022-08-07">07.08.2022</time> to <time
+                                            datetime="2022-10-30">30.10.2022</time>
+                                    </div>
+                                </div>
+                                <div class="limit-nft-info__number" data-watch>
+                                    Number: <span>1</span>
+                                </div>
+                                <a class="limit-nft-info__claim btn" href="#">
+                                    <span>Claim NFT</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nft-detail__foot">
+                        <div data-tabs class="nft-detail__tabs tabs-nft" data-tabs-animate>
+                            <div class="tabs-nft__navigation swiper _anim-top" data-watch>
+                                <nav data-tabs-titles class="tabs-nft__slider swiper-wrapper">
+                                    <button type="button"
+                                        class="swiper-slide tabs-nft__title _tab-active"><span>Bids</span></button>
+                                    <button type="button"
+                                        class="swiper-slide tabs-nft__title"><span>Description</span></button>
+                                    <button type="button" class="swiper-slide tabs-nft__title"><span>Additional
+                                            information</span></button>
+                                </nav>
+                            </div>
+                            <div data-tabs-body class="tabs-nft__content _anim-top" data-watch>
+                                <div class="tabs-nft__body">
+                                    <!-- Порядок скрывания столбцов при адаптиве указывается через js -->
+                                    <table id="bid-table" class="bid-table nowrap" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="bid-table__cell">Bidder</div>
+                                                </th>
+                                                <th>
+                                                    <div class="bid-table__cell">Bid Amount</div>
+                                                </th>
+                                                <th>
+                                                    <div class="bid-table__cell">Bid Time</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bid-table__cell">a***n</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">$2,500.00</div>
+                                                </td>
+                                                <td>
+                                                    <div class="bid-table__cell">11/08/2022 11:30:20</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tabs-nft__body">
+                                    <div class="nft-desc">
+                                        <h3 class="nft-desc__title">
+                                            Description
+                                        </h3>
+                                        <p>
+                                            Get your NFT favorite number and receive the physical NFT coin, which you
+                                            can keep even if you choose to sell the digital NFT.
+                                        </p>
+                                        <p>
+                                            The limited edition coins will be available in 3 groups, with different
+                                            numbers allocations, meant to offer every owner of FIX NFt the chance to
+                                            join the competition.
+                                        </p>
+                                        <p>
+                                            Whether you have a lucky number, are a vivid collectionner or just want to
+                                            add the precious coin to your list of assets, as an NFT owner you have the
+                                            chance to participate in the auction in just a few steps:
+                                        </p>
+                                        <ol class="nft-desc__steps">
+                                            <li class="nft-desc__step">
+                                                register,
+                                            </li>
+                                            <li class="nft-desc__step">
+                                                deposit the guarantee,
+                                            </li>
+                                            <li class="nft-desc__step">
+                                                bid the amount you are willing to pay to win the number you desire.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="tabs-nft__body">
+                                    <!-- Порядок скрывания столбцов при адаптиве указывается через js -->
+                                    <table id="additional-table" class="additional-table display nowrap"
+                                        style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="additional-table__cell">NFT Number</divc>
+                                                </th>
+                                                <th>
+                                                    <div class="additional-table__cell">1</divc>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="additional-table__cell">Amount</divc>
+                                                </td>
+                                                <td>
+                                                    <div class="additional-table__cell">3</divc>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="additional-table__cell">Properties</divc>
+                                                </td>
+                                                <td>
+                                                    <div class="additional-table__cell">№1</divc>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

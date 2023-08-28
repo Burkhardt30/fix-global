@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Fix Global"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="page__auction auction">
+                <div class="auction__container backlight" data-watch>
+                    <div class="auction__heading">
+                        <h1 class="auction__title _anim-child-top">
+                            Auction
+                        </h1>
+                        <p class="auction__text _anim-child-top">
+                            FIX One Token was born from the desire to allow everyone to make money from crypto, with
+                            minimal
+                            investment and without the need for advanced trading knowledge. Our goal was and still is to
+                            bring together investors and traders from all over the world and help them collaborate so
+                            that
+                            everyone wins!
+                        </p>
+                    </div>
+                    <div class="auction__row">
+                        <div class="auction__column _anim-left" data-watch>
+                            <a class="nft-auction" href="gold-category.html">
+                                <div class="nft-auction__view">
+                                    <div class="nft-auction__img">
+                                        <img src="@img/content/gold.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="nft-auction__name">
+                                    FixGold NFT
+                                </div>
+                                <div class="nft-auction__event">
+                                    <div class="nft-auction__event-name nft-auction__event-name--bold">
+                                        II - Private Investment Round
+                                    </div>
+                                    <div class="nft-auction__date">
+                                        From <time datetime="2022-10-15">15.10.2022</time> to <time datetime="2022-12-10">10.12.2022</time>
+                                    </div>
+                                </div>
+                                <div class="nft-auction__event">
+                                    <div class="nft-auction__event-name">
+                                        Public Investment Round
+                                    </div>
+                                    <time class="nft-auction__date" datetime="2022-12-17">
+                                        Launch 17.12.2022
+                                    </time>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="auction__column _anim-right" data-watch>
+                            <a class="nft-auction" href="diamond-category.html">
+                                <div class="nft-auction__view">
+                                    <div class="nft-auction__img">
+                                        <img src="@img/content/diamond.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="nft-auction__name">
+                                    FixDiamond NFT
+                                </div>
+                                <div class="nft-auction__event">
+                                    <div class="nft-auction__event-name nft-auction__event-name--bold">
+                                        II - Private Investment Round
+                                    </div>
+                                    <div class="nft-auction__date">
+                                        From <time datetime="2022-10-15">15.10.2022</time> to <time datetime="2022-12-10">10.12.2022</time>
+                                    </div>
+                                </div>
+                                <div class="nft-auction__event">
+                                    <div class="nft-auction__event-name">
+                                        Public Investment Round
+                                    </div>
+                                    <time class="nft-auction__date" datetime="2022-12-17">
+                                        Launch 17.12.2022
+                                    </time>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

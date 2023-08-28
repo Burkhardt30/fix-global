@@ -1,0 +1,196 @@
+//====================================================================================================
+
+.page {
+    &__category {
+        padding-top: rem(50);
+        padding-bottom: rem(60);
+    }
+}
+
+//====================================================================================================
+
+.category {
+
+    &__container {
+
+        &.backlight {
+            &::before {
+                content: "";
+                background: url("@img/decor/backlight/purple-light.svg") 50% 50% / contain no-repeat;
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+                transition: transform 1.5s ease 0s, opacity .8s ease 0s;
+                width: rem(1850);
+                height: rem(1850);
+                // @include adaptiveValue("width", 1850, 1800);
+                // @include adaptiveValue("height", 1850, 1800);
+                top: 108%;
+                left: -10%;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+                transition: transform 1.5s ease 0s, opacity .8s ease 0s;
+                background: url("@img/decor/backlight/turquoise.svg") 50% 50% / contain no-repeat;
+                width: rem(1850);
+                height: rem(1850);
+                // @include adaptiveValue("width", 1850, 1800);
+                // @include adaptiveValue("height", 1850, 1800);
+                top: 5%;
+                left: 93%;
+            }
+
+            &._watcher-view {
+
+                &::before,
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                    transition: transform 1.5s ease .6s, opacity 1.5s ease .6s;
+                }
+
+                &::after {
+                    transition: transform 2s ease .9s, opacity 2s ease .9s;
+                }
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20) rem(40);
+
+        margin-bottom: rem(40);
+
+        @media (max-width:$mobileSmall) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 85, 40);
+        line-height: math.div(104, 85);
+    }
+
+    &__back {
+        flex-shrink: 0;
+
+        a {
+            transition: all 0.2s;
+
+            &:hover {
+                color: $accentTextColor;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template: auto / repeat(4, 1fr);
+        @include adaptiveValue("row-gap", 40, 20);
+        @include adaptiveValue("column-gap", 45, 15);
+
+        @media (max-width:$tablet) {
+            grid-template: auto / repeat(3, 1fr);
+        }
+
+        @media (max-width:$mobileSmall) {
+            grid-template: auto / repeat(2, 1fr);
+        }
+
+        @media (max-width: em(400)) {
+            grid-template: none;
+        }
+    }
+
+    &__item {
+
+        @media (min-width:em(400)) {
+            transform: translateY(-5vh);
+            opacity: 0;
+            transition: opacity .3s, transform .3s;
+
+            .category__grid._watcher-view & {
+                opacity: 1;
+                transform: translateY(0%);
+                transition: opacity 1s, transform 1s;
+
+                @for $var from 1 to (50 + 1) {
+                    $delay: ($var + 0 * 10 - 1) * .2;
+
+                    &:nth-child(#{$var}) {
+                        transition-delay: #{$delay + s},
+                        #{$delay + s};
+                    }
+                }
+            }
+        }
+
+        @media (max-width: em(400)) {
+            transform: translateY(-5vh);
+            opacity: 0;
+            transition: opacity .3s, transform .3s;
+
+            &._watcher-view {
+                opacity: 1;
+                transform: translateY(0%);
+                transition: opacity .8s, transform .8s;
+            }
+        }
+    }
+
+    &--diamond {
+        .nft-card {
+            &:hover {
+                box-shadow: rem(20) rem(20) rem(60) #00aeff2e;
+            }
+        }
+    }
+}
+
+.nft-card {
+    display: block;
+    padding: rem(15) rem(15) rem(20);
+    background: #040516;
+    border-radius: rem(28);
+
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: rem(20) rem(20) rem(60) rgba(255, 184, 0, 0.18);
+    }
+
+    &__img-box {
+        overflow: hidden;
+        border-radius: rem(17);
+
+        margin-bottom: rem(15);
+    }
+
+    &__img {
+        * {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+
+        margin-bottom: rem(15);
+    }
+
+    &__status {
+        color: #ffffff66;
+        font-size: rem(15);
+        line-height: math.div(18, 15);
+    }
+}

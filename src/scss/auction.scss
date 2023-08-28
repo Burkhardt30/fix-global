@@ -1,0 +1,178 @@
+//====================================================================================================
+
+.page {
+    &__auction {
+        padding-top: rem(50);
+        padding-bottom: rem(60);
+    }
+}
+
+//====================================================================================================
+
+.auction {
+    &__container {
+
+        &.backlight {
+            &::before {
+                content: "";
+                background: url("@img/decor/backlight/purple-light.svg") 50% 50% / contain no-repeat;
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+                transition: transform 1.5s ease 0s, opacity .8s ease 0s;
+                width: rem(1850);
+                height: rem(1850);
+                // @include adaptiveValue("width", 1850, 1800);
+                // @include adaptiveValue("height", 1850, 1800);
+                top: 108%;
+                left: -10%;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+                transition: transform 1.5s ease 0s, opacity .8s ease 0s;
+                background: url("@img/decor/backlight/turquoise.svg") 50% 50% / contain no-repeat;
+                width: rem(1850);
+                height: rem(1850);
+                // @include adaptiveValue("width", 1850, 1800);
+                // @include adaptiveValue("height", 1850, 1800);
+                top: 5%;
+                left: 93%;
+            }
+
+            &._watcher-view {
+
+                &::before,
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                    transition: transform 1.5s ease .6s, opacity 1.5s ease .6s;
+                }
+
+                &::after {
+                    transition: transform 2s ease .9s, opacity 2s ease .9s;
+                }
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 64, 20);
+
+        @include adaptiveValue("margin-bottom", 54, 30);
+
+        @media (max-width:$tablet) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 85, 40);
+        line-height: math.div(104, 85);
+    }
+
+    &__text {
+        max-width: rem(660);
+        font-size: rem(15);
+        line-height: math.div(18, 15);
+        transition-delay: .0s, .0s;
+
+        ._watcher-view & {
+            transition-delay: .2s, .2s;
+        }
+    }
+
+    &__row {
+        @media (min-width:$mobile) {
+            @include gridCards(fit, 420px, 1fr, 41px);
+        }
+
+        display: grid;
+        gap: rem(40);
+    }
+
+    &__column {}
+}
+
+.nft-auction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #00000066;
+    @include adaptiveValue("border-radius", 39, 20);
+    padding: rem(21) rem(15);
+    text-align: center;
+
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: rem(20) rem(20) rem(60) #ffb8002e;
+    }
+
+    &__view {
+        max-width: rem(287);
+
+        margin-bottom: rem(42);
+    }
+
+    &__img {
+        * {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 40, 27);
+        line-height: math.div(49, 40);
+
+        margin-bottom: rem(16);
+    }
+
+    &__event {
+        &:not(:last-child) {
+            margin-bottom: rem(18);
+        }
+    }
+
+    &__event-name {
+        color: $goldTextColor;
+        @include adaptiveValue("font-size", 30, 20);
+        line-height: math.div(37, 30);
+
+        margin-bottom: rem(17);
+    }
+
+    &__event-name--bold {
+        font-weight: 700;
+    }
+
+    &__date {
+        font-weight: 300;
+        @include adaptiveValue("font-size", 18, 16);
+        line-height: math.div(22, 18);
+
+        display: flex;
+        justify-content: center;
+        column-gap: rem(5);
+
+        &::before {
+            content: '';
+            margin-top: em(10, 18);
+            margin-right: em(9, 18);
+            width: rem(3);
+            height: rem(3);
+            background: $mainTextColor;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    }
+}

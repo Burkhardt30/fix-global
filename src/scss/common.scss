@@ -1,0 +1,359 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+// Анимационные эффекты - начало
+
+._anim-fade {
+    opacity: 0;
+    transition: opacity .3s;
+
+    &._watcher-view {
+        opacity: 1;
+        transition: opacity .8s;
+    }
+}
+
+._anim-top {
+    transform: translateY(-5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    &._watcher-view {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-left {
+    transform: translateX(-10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    &._watcher-view {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-right {
+    transform: translateX(10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    &._watcher-view {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-bottom {
+    transform: translateY(5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    &._watcher-view {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-fade {
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-top {
+    transform: translateY(-5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-left {
+    transform: translateX(-10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-right {
+    transform: translateX(10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-bottom {
+    transform: translateY(5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-lineal-fade {
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view>& {
+        opacity: 1;
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-lineal-top {
+    transform: translateY(-5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view>& {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-lineal-left {
+    transform: translateX(-10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view>& {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-lineal-right {
+    transform: translateX(10vw);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view>& {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+._anim-child-lineal-bottom {
+    transform: translateY(5vh);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+
+    ._watcher-view>& {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: opacity .8s, transform .8s;
+    }
+}
+
+// Анимационные эффекты - конец
+
+.logo {
+    display: inline-block;
+}
+
+.heading {
+    @include adaptiveValue("font-size", 40, 26);
+    font-weight: 700;
+    line-height: math.div(49, 40);
+    text-align: center;
+    margin-bottom: em(47, 40);
+
+    position: relative;
+
+    &__bg-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        font-weight: 700;
+        @include adaptiveValue("font-size", 200, 50);
+        line-height: 1;
+        text-align: center;
+
+        width: calc(100vw - rem(30));
+        mix-blend-mode: overlay;
+
+        opacity: 0;
+        transition: opacity .3s 0s;
+
+        ._watcher-view & {
+            opacity: 1;
+            transition: opacity 1.5s .2s;
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("font-size", 25, 18);
+        line-height: math.div(30, 25);
+        margin: 0 auto em(30, 25);
+        font-weight: 400;
+        max-width: rem(800);
+
+        transition: opacity .3s 0, transform .3s 0;
+
+        ._watcher-view & {
+            transition: opacity .8s .2s, transform .8s .2s;
+        }
+    }
+
+    &__sub {
+        @include adaptiveValue("font-size", 16, 12);
+        line-height: math.div(30, 25);
+        margin-bottom: em(10, 25);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        transition: opacity .3s 0, transform .3s 0;
+
+        ._watcher-view & {
+            transition: opacity .8s .2s, transform .8s .2s;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &--align-left {
+        text-align: left;
+    }
+
+    &--bg-text-above {
+        .heading__bg-text {
+            top: auto;
+            transform: translate(-50%, 0);
+
+            bottom: 50%;
+        }
+    }
+}
+
+.backlight {
+    position: relative;
+
+    &::before {
+        display: block;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        // background: url("@img/decor/backlight/turquoise.svg") 50% 50% / contain no-repeat;
+        @include adaptiveValue("width", 1850, 1000);
+        @include adaptiveValue("height", 1850, 1000);
+        top: 50%;
+        left: 50%;
+    }
+}
+
+.backlight-parent {
+    position: relative;
+}
+
+.backlight-sources {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    >* {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -5;
+
+        @include adaptiveValue("width", 847, 550);
+        @include adaptiveValue("height", 847, 550);
+        border-radius: 50%;
+
+        background: #585858;
+        filter: blur(250px);
+
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+        transition: translate 1.5s 0s, scale 1.5s 0s, opacity .8s 0s;
+    }
+    
+    &._watcher-view {
+        >* {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            transition: translate 1.5s .6s, scale 1.5s .6s, opacity 1.5s .6s;
+        }
+    }
+}
+
+.up-button {
+    position: fixed;
+    @include adaptiveValue("right", 55, 15);
+    @include adaptiveValue("bottom", 55, 15);
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    background: #0e0f24e7;
+    box-shadow: 0 0 rem(20) #00aeff82;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(rem(20));
+    transition: all .8s;
+
+    &::before{
+        content:'';
+        width: rem(30);
+        height: rem(30);
+        transform: rotate(-90deg);
+        background: url('@img/icons/right-angle.png') 50% 50% / rem(7) rem(12) no-repeat;
+    }
+
+    &:hover{
+        background: #55578a;
+    }
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: all .3s;
+    }
+}
